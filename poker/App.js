@@ -1,5 +1,4 @@
-const Card = ({cardz})=>{
-    // let { card} = props;
+const CardUI = ({cardz})=>{
     console.log(cardz, "*********")
     return (
             <img style={{ width: 100 }} src={`cards/${cardz.value}${cardz.suit}.png`} />
@@ -11,20 +10,17 @@ const Card = ({cardz})=>{
 
 
 // Render the cards using React!
-const App = props => {
-//   return (<Card cards={props}/>)
-let { cards } = props;
-// console.log(cards, '~~~~~~~~')
-return (
-    
-    <React.Fragment>
-        {cards.map((cardObject, index)=>  (
-            <Card cardz={cardObject} index={index}/>
-           
-            )
-        )}
-    </React.Fragment>
-)
+const App = (props) => {
+    let { cards } = props;
+    // console.log(cards, '~~~~~~~~')
+    return (
+        <React.Fragment>
+            {cards.map((cardObject, index)=>  (
+                <CardUI cardz={cardObject} key={index}/>
+                )
+            )}
+        </React.Fragment>
+    )
 };
 
 
