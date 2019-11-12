@@ -1,7 +1,7 @@
 // Render the rectangle using React!
 const App = (props) => {
     let { rectangle } = props;
-    console.log(rectangle)
+    console.log(props)
     return (
         <div style={{
             width: rectangle.width,

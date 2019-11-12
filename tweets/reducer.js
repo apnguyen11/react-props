@@ -18,7 +18,7 @@ const initialState = [
             isVerified: true,
             profilePic: "https://image.freepik.com/free-icon/user-image-with-black-background_318-34564.jpg"
         },
-        text: "How Can Mirrors Be Real If Our Eyes Aren't Real",
+        text: "Second tweet",
         likes: 112,
         retweets: 2,
         replies: 24
@@ -38,14 +38,11 @@ const initialState = [
 ]
 ;
 
-const reducer = (state = initialState, action) => {
-    // Handle actions here - make sure you don't mutate the state!
-    const { type } = action;
 
     const reducer = (state = initialState, action) => {
         // Handle actions here - make sure you don't mutate the state!
         const { type, method } = action;
-
+        console.log(method, '~~~~~~~~~~~~~~~~~~~~~~~~')
         if (type == 'SORT') {
             return [...state].sort((a, b) => b[method] - a[method]);
         }
@@ -53,5 +50,4 @@ const reducer = (state = initialState, action) => {
         return state;
     }
     
-    return state;
-}
+ 
